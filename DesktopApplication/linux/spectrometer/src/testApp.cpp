@@ -15,7 +15,7 @@ void testApp::setup(){
 	    spec.colors[i]= ofFloatColor::fromHsb(ofMap(spec.inc*(float)i,0, spec.width, .902,0), 1.0, 1.0);
 	}
 
-	ofSetFrameRate(60);
+	ofSetFrameRate(200);
 }
 
 //--------------------------------------------------------------
