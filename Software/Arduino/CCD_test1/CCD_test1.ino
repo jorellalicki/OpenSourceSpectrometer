@@ -2,6 +2,10 @@ int vOut = A1;               //connected to pin 1
 int clock = 9;               //connected to pin 5
 int shutter = 10;            //connected to pin 9
 int roc = 11;                //connected to pin 11
+/* sensor pins 8, 22, and 21 conneced to 5V.
+	pin 20 connected 9V.
+	Pins 4, 10, 19, and 12 connected to GND
+	*/
 
 unsigned int upArray[2048/100];
 unsigned int downArray[2048/100];
