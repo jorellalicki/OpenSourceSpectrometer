@@ -16,16 +16,16 @@ void setup(){
 void loop(){
         digitalWrite(clock, HIGH);
 	digitalWrite(roc, LOW);
-	delay(1);
+	delayMicroseconds(10);
 	digitalWrite(roc, HIGH);
 
 	//analogWrite(clock, 128);
 
         for(int i = 0; i < 2087+30; ++i){
                 digitalWrite(clock, LOW);
-		delayMicroseconds(10);
+		delayMicroseconds(1);
 		digitalWrite(clock, HIGH);
-	        delayMicroseconds(10);
+	        delayMicroseconds(100);
          }
 /*
 	for(int i = 0; i < 2048; ++i){
