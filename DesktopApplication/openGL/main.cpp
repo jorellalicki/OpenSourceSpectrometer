@@ -60,7 +60,7 @@ void reshape(int w, int h)
 	
 	glMatrixMode (GL_PROJECTION);
 	glLoadIdentity ();
-	glOrtho (0, 1000, 800, 0, 0, 1);
+	glOrtho (0, 500, 500, 0, 0, 1);
 	glMatrixMode (GL_MODELVIEW);
 }
 
