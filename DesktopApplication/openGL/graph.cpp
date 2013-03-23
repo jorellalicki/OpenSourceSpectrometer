@@ -1,5 +1,6 @@
 #include "graph.h"
 
+
 graph::graph () {}
 
 graph::graph (int _x,int _y, int _width, int _height, int _xMin, int _xMax, string sFont)
@@ -10,8 +11,8 @@ graph::graph (int _x,int _y, int _width, int _height, int _xMin, int _xMax, stri
 	height = _height;
 	xMin = _xMin;
 	xMax = _xMax;
-	font.loadFont(sFont, 14);
-
+	//font.loadFont(sFont, 14);
+	views = vector<viewContext>();
 	views.push_back(viewContext(0,1.0));
 	viewLength = 2048;
 	viewStartOffset = 0;
@@ -46,16 +47,18 @@ void graph::drawGraph ()
 
 	for(int i=0; i < 11; i++)
 	{
-		font.drawString(ofToString(i/10) + "." + ofToString(i%10),-32, height*(10-i)/10-5);
-		font.drawString(ofToString((xMax-xMin)*i/10+xMin), width*i/10+2, height+30);
+		// TODO: fix font drawing
+		//font.drawString(ofToString(i/10) + "." + ofToString(i%10),-32, height*(10-i)/10-5);
+		//font.drawString(ofToString((xMax-xMin)*i/10+xMin), width*i/10+2, height+30);
 	}
 
-	if(drawViewBox)
+	// TODO: fix view box rendering
+/*	if(drawViewBox)
 	{
 		ofSetColor(160,60,0,150);
 		ofFill();
 		ofRect(viewStart, 0, viewEnd-viewStart, height);
-	}
+	}*/
 
 	glPopMatrix();
 }
@@ -70,13 +73,13 @@ void graph::setViewContext()
 	xMin = 250;
 	xMax = 800;
 	int range = xMax - xMin;
-	for(int i=1; i< views.size(); i++)
+	for(unsigned int i=1; i< views.size(); i++)
 	{
 		viewScale *= (views[i-1].pEnd - views[i-1].pStart);
 		newViewEnd   = newViewStart + views[i].pEnd * viewScale;
 		newViewStart = newViewStart + views[i].pStart * viewScale;
 	}
-	ofLog(OF_LOG_NOTICE, ofToString(newViewStart) + ", " + ofToString(newViewEnd));
+//	ofLog(OF_LOG_NOTICE, ofToString(newViewStart) + ", " + ofToString(newViewEnd));
 	viewStartOffset = newViewStart*2048;
 	viewLength = (newViewEnd - newViewStart)*2048;
 	xMax = xMin + newViewEnd * range;

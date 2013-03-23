@@ -1,5 +1,7 @@
 //#include "ofMain.h"
 #include <string>
+#include <vector>
+#include <GL/glut.h>
 
 #define NUM_POINTS 2048
 
@@ -22,7 +24,8 @@ public:
 class point {
 	public:
 		int x,y;
-		Point(int _x, int _y) {
+		point() {}
+		point(int _x, int _y) {
 			x = _x;	// wavelength
 			y = _y;	// intensity
 		}
@@ -33,7 +36,8 @@ class point {
 class color {
 	public:
 		int r,g,b;
-		Point(int _r, int _g, int _b) {
+		color() {}
+		color(int _r, int _g, int _b) {
 			r = _r;
 			g = _g;
 			b = _b;
@@ -48,7 +52,9 @@ class graph{
 		graph(int _x,int _y, int _width, int _height, int _xMin, int _xMax, string sFont);
 		
 		
-		void updatePoints(vector<int>);
+		void updatePoints(vector<point> p) {
+			points = p;
+		}
 		void setViewContext();
 
 		void drawGraph();
@@ -61,7 +67,8 @@ class graph{
 		//ofTrueTypeFont font;
 
 		bool drawViewBox;
-		point points [NUM_POINTS];
+//		point points [NUM_POINTS];
+		vector<point> points;
 		color colors [NUM_POINTS];
 		int xGraph, yGraph, width, height;
 		float inc;
@@ -71,5 +78,5 @@ class graph{
 		int xMin;
 		int xMax;
 
-		vector <viewContext> views;
+        vector <viewContext> views;
 };

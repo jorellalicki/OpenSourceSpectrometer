@@ -1,73 +1,57 @@
-/*
-	TODO:
-	Implemnt appropriate data-polling
-	This should probably happen in display function, after flushing
-*/
-
 #include <GL/glut.h>
 #include <iostream>
 #include "graph.h"
 
 using namespace std;
 
-#define WINDOW_INIT_WIDTH 1000
-#define WINDOW_INIT_HEIGHT 800
+#define WINDOW_INIT_WIDTH 1024
+#define WINDOW_INIT_HEIGHT 768
 
 
 graph spec;
 
 // This can be used to do stuff while idling
 void onIdle(void) {
+
+	
+	// call this if the display should be updated (got new data)
+	glutPostRedisplay();
 }
 
 // OpenGL display routine
 void drawScene(void)
 {
-	cout << "drawScene" << endl;
-
-
 	// *** BEGIN Drawing ***
 	glClear (GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
 	
-	// draw a test rectangle...	
+	// draw a test quadrilateral...	
 	glBegin(GL_QUADS);
 	unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
 	glVertex2f(x1, y1); glVertex2f(2*x2, y1); glVertex2f(x2, y2); glVertex2f(x1, y2);
 	glEnd();
 	
 	
+	spec.drawGraph();
+	
 	// *** END Drawing ***
 	
-	// Use double-buffering to prevent tearing
+	// Refresh display
 	glutSwapBuffers();
 	
-	// Force re-display (flush)
-	glutPostRedisplay();
-	
-	
-	// TODO: poll spectrometer here, and analyze data	
-	
-		
-	//glFlush(); // could possibly use this instead of glutpostredisplay?
+	// Limit framerate
+	sleep(1.0/60.0);
 }
 
 // OpenGL window reshape/resize routine.
 void reshape(int w, int h)
 {
-	/*glViewport(0, 0, (GLsizei)w, (GLsizei)h); 
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	float size = 5.0;
-	glOrtho(-size, size, -size, size, -size, size);
-	glMatrixMode(GL_MODELVIEW);*/
-	
+	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode (GL_PROJECTION);
 	glLoadIdentity ();
-	glOrtho (0, 500, 500, 0, 0, 1);
+	glOrtho (0, 1000, 1000, 0, 0, 1);
 	glMatrixMode (GL_MODELVIEW);
 }
-
 
 void setup(void) 
 {
@@ -85,10 +69,15 @@ void setup(void)
 	Maybe just use timers in display function?
 	*/
 		
-//	glXSwapIntervalEXT(1);
+	//	glXSwapIntervalEXT(1);
 
 
-	spec = graph(50,75, ofGetWidth()-100, ofGetHeight()-140, 250, 800, "UbuntuMono-R.ttf");
+	spec = graph(50,75, WINDOW_INIT_WIDTH-100, WINDOW_INIT_HEIGHT-140, 250, 800, "UbuntuMono-R.ttf");
+	vector<point> pts = vector<point>();
+	for (int i = 0; i < 2048; i++) {
+		pts.push_back(point(i,i));
+	}
+	spec.updatePoints(pts);
 }
 
 
@@ -122,11 +111,11 @@ void keyInput(unsigned char key, int x, int y)
 int main(int argc, char **argv) 
 {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); // not sure what this does
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); //GLUT_DOUBLE = double buffering
 	
 	// initialize window -- size & location
 	glutInitWindowSize(WINDOW_INIT_WIDTH, WINDOW_INIT_HEIGHT);
-	glutInitWindowPosition(100, 100);
+	//glutInitWindowPosition(00, 0);
 	glutCreateWindow("Spectrometer Graph");
 
 	setup();
