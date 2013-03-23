@@ -6,11 +6,15 @@
 
 #include <GL/glut.h>
 #include <iostream>
+#include "graph.h"
 
 using namespace std;
 
 #define WINDOW_INIT_WIDTH 1000
 #define WINDOW_INIT_HEIGHT 800
+
+
+graph spec;
 
 // This can be used to do stuff while idling
 void onIdle(void) {
@@ -21,15 +25,19 @@ void drawScene(void)
 {
 	cout << "drawScene" << endl;
 
-	unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
-	
-	glClear (GL_COLOR_BUFFER_BIT);
 
+	// *** BEGIN Drawing ***
+	glClear (GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
 	
+	// draw a test rectangle...	
 	glBegin(GL_QUADS);
+	unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
 	glVertex2f(x1, y1); glVertex2f(2*x2, y1); glVertex2f(x2, y2); glVertex2f(x1, y2);
 	glEnd();
+	
+	
+	// *** END Drawing ***
 	
 	// Use double-buffering to prevent tearing
 	glutSwapBuffers();
@@ -38,7 +46,10 @@ void drawScene(void)
 	glutPostRedisplay();
 	
 	
-//	glFlush(); // could possibly use this instead of glutpostredisplay?
+	// TODO: poll spectrometer here, and analyze data	
+	
+		
+	//glFlush(); // could possibly use this instead of glutpostredisplay?
 }
 
 // OpenGL window reshape/resize routine.
@@ -53,7 +64,7 @@ void reshape(int w, int h)
 	
 	glMatrixMode (GL_PROJECTION);
 	glLoadIdentity ();
-	glOrtho (0, 1000, 800, 0, 0, 1);
+	glOrtho (0, 500, 500, 0, 0, 1);
 	glMatrixMode (GL_MODELVIEW);
 }
 
@@ -75,6 +86,9 @@ void setup(void)
 	*/
 		
 //	glXSwapIntervalEXT(1);
+
+
+	spec = graph(50,75, ofGetWidth()-100, ofGetHeight()-140, 250, 800, "UbuntuMono-R.ttf");
 }
 
 
@@ -108,17 +122,20 @@ void keyInput(unsigned char key, int x, int y)
 int main(int argc, char **argv) 
 {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); 
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); // not sure what this does
+	
+	// initialize window -- size & location
 	glutInitWindowSize(WINDOW_INIT_WIDTH, WINDOW_INIT_HEIGHT);
-	glutInitWindowPosition(100, 100); 
+	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Spectrometer Graph");
 
-	setup(); 
+	setup();
+	
+	// specify functions for OpenGL 
 	glutDisplayFunc(drawScene); 
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyInput);
 	glutIdleFunc(onIdle);
-	
 	
 	glutMainLoop(); // this blocks; nothing past here is executed
 
