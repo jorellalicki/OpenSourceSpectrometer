@@ -12,7 +12,6 @@ void drawScene(void)
 
 	unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
 	
-	glClearColor(.5,0,0,0);
 	glClear (GL_COLOR_BUFFER_BIT);
 
 	glLoadIdentity();
@@ -25,7 +24,7 @@ void drawScene(void)
 //	SwapBuffers();
 }
 
-// OpenGL window reshape routine.
+// OpenGL window reshape/resize routine.
 void reshape(int w, int h)
 {
 	/*glViewport(0, 0, (GLsizei)w, (GLsizei)h); 
@@ -44,17 +43,13 @@ void reshape(int w, int h)
 
 void setup(void) 
 {
-	glClearColor(1.0, 1.0, 1.0, 0.0);
-//	const unsigned int XSize = 640, YSize = 480;
-
-/*	glMatrixMode (GL_PROJECTION);
-	glLoadIdentity ();
-	glOrtho (0, XSize, YSize, 0, 0, 1);
-	glMatrixMode (GL_MODELVIEW);
+	// Set background color
+	glClearColor(0.0, 0.0, 0.0, 0.0);
 	
-	glDisable(GL_DEPTH_TEST);*/
+	// Use reshape function to initialize viewport
 	reshape(WINDOW_INIT_WIDTH, WINDOW_INIT_HEIGHT);
 	
+	// Disable depth-testing because we are using 2D
 	glDisable(GL_DEPTH_TEST);
 }
 
@@ -63,13 +58,20 @@ void setup(void)
 // Keyboard input processing routine.
 void keyInput(unsigned char key, int x, int y)
 {
+	// Determine which key was pressed
 	switch(key) 
 	{
+		// ESC key: exit program
 		case 27:
 			exit(0);
 			break;
+		// Example -- press the x key
 		case 'x':
 			cout << "you pressed x" << endl;
+			break;
+		// Example -- press the x key while holding shift
+		case 'X':
+			cout << "you pressed X" << endl;
 			break;
 		default:
 			break;
