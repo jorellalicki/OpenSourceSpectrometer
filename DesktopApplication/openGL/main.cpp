@@ -6,11 +6,15 @@
 
 #include <GL/glut.h>
 #include <iostream>
+#include "graph.h"
 
 using namespace std;
 
 #define WINDOW_INIT_WIDTH 1000
 #define WINDOW_INIT_HEIGHT 800
+
+
+graph spec;
 
 // This can be used to do stuff while idling
 void onIdle(void) {
@@ -82,6 +86,9 @@ void setup(void)
 	*/
 		
 //	glXSwapIntervalEXT(1);
+
+
+	spec = graph(50,75, ofGetWidth()-100, ofGetHeight()-140, 250, 800, "UbuntuMono-R.ttf");
 }
 
 
