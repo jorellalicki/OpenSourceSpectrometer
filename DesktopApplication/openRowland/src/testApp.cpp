@@ -69,7 +69,7 @@ void testApp::update(){
 	vector<ofPoint> importedPoints = importCSV("points.csv");
     for(int i=spec.viewStartOffset; i<spec.viewStartOffset+spec.viewLength; i++) {
 		spec.points[i].x = importedPoints[i].x;
-		spec.points[i].y = importedPoints[i].y * seed;
+		spec.points[i].y = importedPoints[i].y * ofRandom(0.495,2.005);
 		//spec.points[i]= ofPoint(spec.inc*(float)(i-spec.viewStartOffset), ofNoise(i/100.0*seed) * spec.height);
 	}
 	//createCSV(spec.points);
