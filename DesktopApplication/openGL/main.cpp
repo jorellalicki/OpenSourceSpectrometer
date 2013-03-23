@@ -21,15 +21,19 @@ void drawScene(void)
 {
 	cout << "drawScene" << endl;
 
-	unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
-	
-	glClear (GL_COLOR_BUFFER_BIT);
 
+	// *** BEGIN Drawing ***
+	glClear (GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
 	
+	// draw a test rectangle...	
 	glBegin(GL_QUADS);
+	unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
 	glVertex2f(x1, y1); glVertex2f(2*x2, y1); glVertex2f(x2, y2); glVertex2f(x1, y2);
 	glEnd();
+	
+	
+	// *** END Drawing ***
 	
 	// Use double-buffering to prevent tearing
 	glutSwapBuffers();
@@ -38,7 +42,10 @@ void drawScene(void)
 	glutPostRedisplay();
 	
 	
-//	glFlush(); // could possibly use this instead of glutpostredisplay?
+	// TODO: poll spectrometer here, and analyze data	
+	
+		
+	//glFlush(); // could possibly use this instead of glutpostredisplay?
 }
 
 // OpenGL window reshape/resize routine.
