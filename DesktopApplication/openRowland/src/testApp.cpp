@@ -48,18 +48,6 @@ vector<ofPoint> testApp::importCSV(string filename) {
 		else newPoints[(i-1)/2].y = pointsVec[i];
 	}
 
-	/*inFile.open(filename);
-	inFile.seekg(0, ios::end);
-	inString.resize(inFile.tellg());
-	inFile.seekg(0, ios::beg);
-	inFile.read(&inString[0], inString.size());
-
-	stringstream ss(inString);
-	while (ss >> v) {
-		pointsVec.push_back(v);
-		if (ss.peek() == ',') inFile.ignore();
-	} */
-
 	return newPoints;
 }
 
@@ -67,12 +55,18 @@ vector<ofPoint> testApp::importCSV(string filename) {
 void testApp::update(){
     float seed = ofRandom(0.995,1.005);
 	vector<ofPoint> importedPoints = importCSV("points.csv");
+	ofPoint outPoints[2048];
     for(int i=spec.viewStartOffset; i<spec.viewStartOffset+spec.viewLength; i++) {
-		spec.points[i].x = importedPoints[i].x;
-		spec.points[i].y = importedPoints[i].y * ofRandom(0.495,2.005);
-		//spec.points[i]= ofPoint(spec.inc*(float)(i-spec.viewStartOffset), ofNoise(i/100.0*seed) * spec.height);
+		//spec.points[i].x = importedPoints[i].x;
+		//spec.points[i].y = importedPoints[i].y * ofRandom(0.495,2.005);
+		spec.points[i]= ofPoint(spec.inc*(float)(i-spec.viewStartOffset), ofNoise(i/100.0) * spec.height);
+		double yVal = 0.5;
+		if (ofNoise(i/100.0) < 0.5) yVal = ofNoise(i/100.0) + 0.5;
+		if (ofNoise(i/100.0) > 0.5) yVal = 0.5 - (ofNoise(i/100.0) - 0.5);
+		outPoints[i] = ofPoint((spec.inc * i / 2.362490909090909090909) + 250, yVal);
 	}
-	//createCSV(spec.points);
+
+	createCSV(outPoints);
 }
 
 //--------------------------------------------------------------
