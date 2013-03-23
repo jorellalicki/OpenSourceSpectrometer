@@ -49,6 +49,13 @@ void reshape(int w, int h)
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode (GL_PROJECTION);
 	glLoadIdentity ();
+	
+	/*	OpenGL lesson:
+	
+		The 1000's specify the size of the OpenGL coordinate grid. 
+		All points are drawn to this grid, not actual pixels.
+		Resizing the window will not affect this grid, it will only scale your view of it.
+	*/
 	glOrtho (0, 1000, 1000, 0, 0, 1);
 	glMatrixMode (GL_MODELVIEW);
 }
@@ -115,7 +122,7 @@ int main(int argc, char **argv)
 	
 	// initialize window -- size & location
 	glutInitWindowSize(WINDOW_INIT_WIDTH, WINDOW_INIT_HEIGHT);
-	//glutInitWindowPosition(00, 0);
+	//glutInitWindowPosition(0, 0);
 	glutCreateWindow("Spectrometer Graph");
 
 	setup();
