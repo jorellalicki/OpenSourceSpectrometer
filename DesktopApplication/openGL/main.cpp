@@ -115,17 +115,20 @@ void keyInput(unsigned char key, int x, int y)
 int main(int argc, char **argv) 
 {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); 
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); // not sure what this does
+	
+	// initialize window -- size & location
 	glutInitWindowSize(WINDOW_INIT_WIDTH, WINDOW_INIT_HEIGHT);
-	glutInitWindowPosition(100, 100); 
+	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Spectrometer Graph");
 
-	setup(); 
+	setup();
+	
+	// specify functions for OpenGL 
 	glutDisplayFunc(drawScene); 
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyInput);
 	glutIdleFunc(onIdle);
-	
 	
 	glutMainLoop(); // this blocks; nothing past here is executed
 
