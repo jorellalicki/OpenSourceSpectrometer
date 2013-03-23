@@ -7,6 +7,8 @@ class testApp : public ofBaseApp{
 
 	public:
 		void setup();
+		void createCSV(ofPoint input[2048]);
+		vector<ofPoint> importCSV(string filename);
 		void update();
 		void draw();
 

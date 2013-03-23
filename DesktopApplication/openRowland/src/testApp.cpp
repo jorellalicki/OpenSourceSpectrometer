@@ -19,12 +19,60 @@ void testApp::setup(){
 	}
 }
 
+void testApp::createCSV(ofPoint input[2048]) {
+	stringstream newCSV;
+	ofstream outFile;
+	outFile.open("points.csv");
+	for (int i = 0; i < 2048; i++) {
+		newCSV << input[i].x << "," << input[i].y << endl;
+	}
+	outFile << newCSV.str();
+	outFile.close();
+}
+
+vector<ofPoint> testApp::importCSV(string filename) {
+	vector<ofPoint> newPoints;
+	string inString;
+	ifstream inFile(filename);
+
+	vector<double> pointsVec;
+	for (int i = 0; i < 2048; i++) newPoints.push_back(ofPoint(0, 0, 0));
+	double v;
+	while (inFile >> v) {
+		pointsVec.push_back(v);
+		if (inFile.peek() == ',') inFile.ignore();
+	}
+
+	for (int i = 0; i < pointsVec.size(); i++) {
+		if (i % 2 == 0) newPoints[i/2].x = pointsVec[i];
+		else newPoints[(i-1)/2].y = pointsVec[i];
+	}
+
+	/*inFile.open(filename);
+	inFile.seekg(0, ios::end);
+	inString.resize(inFile.tellg());
+	inFile.seekg(0, ios::beg);
+	inFile.read(&inString[0], inString.size());
+
+	stringstream ss(inString);
+	while (ss >> v) {
+		pointsVec.push_back(v);
+		if (ss.peek() == ',') inFile.ignore();
+	} */
+
+	return newPoints;
+}
+
 //--------------------------------------------------------------
 void testApp::update(){
     float seed = ofRandom(0.995,1.005);
+	vector<ofPoint> importedPoints = importCSV("points.csv");
     for(int i=spec.viewStartOffset; i<spec.viewStartOffset+spec.viewLength; i++) {
-		spec.points[i]= ofPoint(spec.inc*(float)(i-spec.viewStartOffset), ofNoise(i/100.0*seed) * spec.height);
+		spec.points[i].x = importedPoints[i].x;
+		spec.points[i].y = importedPoints[i].y * seed;
+		//spec.points[i]= ofPoint(spec.inc*(float)(i-spec.viewStartOffset), ofNoise(i/100.0*seed) * spec.height);
 	}
+	//createCSV(spec.points);
 }
 
 //--------------------------------------------------------------
@@ -91,7 +139,7 @@ void testApp::mouseReleased(int x, int y, int button){
         //spec.viewStartOffset=spec.viewStart/(float)spec.width*spec.viewLength;
         spec.views.push_back(viewContext(spec.viewStart/((float)spec.width), spec.viewEnd/((float)spec.width)));
 	}
-	else
+	else if (spec.viewEnd < spec.viewStart)
 	{
 	    spec.views.push_back(viewContext(spec.viewEnd/((float)spec.width), spec.viewStart/((float)spec.width)));
         //spec.viewStartOffset=(spec.viewEnd)/(float)spec.width*spec.viewLength;

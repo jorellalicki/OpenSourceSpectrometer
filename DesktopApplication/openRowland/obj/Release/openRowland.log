@@ -1,50 +1,10 @@
-﻿Build started 2/28/2013 4:20:55 PM.
-     1>Project "C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\openRowland.vcxproj" on node 3 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "obj\Release\openRowland.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\libs\openFrameworks /I..\..\..\libs\openFrameworks\graphics /I..\..\..\libs\openFrameworks\app /I..\..\..\libs\openFrameworks\sound /I..\..\..\libs\openFrameworks\utils /I..\..\..\libs\openFrameworks\communication /I..\..\..\libs\openFrameworks\video /I..\..\..\libs\openFrameworks\types /I..\..\..\libs\openFrameworks\math /I..\..\..\libs\openFrameworks\3d /I..\..\..\libs\openFrameworks\gl /I..\..\..\libs\openFrameworks\events /I..\..\..\libs\glut\include /I..\..\..\libs\rtAudio\include /I..\..\..\libs\quicktime\include /I..\..\..\libs\freetype\include /I..\..\..\libs\freetype\include\freetype2 /I..\..\..\libs\freeImage\include /I..\..\..\libs\fmodex\include /I..\..\..\libs\videoInput\include /I..\..\..\libs\glew\include\ /I..\..\..\libs\glu\include /I..\..\..\libs\tess2\include /I..\..\..\libs\cairo\include\cairo /I..\..\..\libs\poco\include /I..\..\..\addons /I..\..\..\addons\ofxXmlSettings\libs /I..\..\..\addons\ofxXmlSettings\src /I..\..\..\addons\ofxControlPanel\libs /I..\..\..\addons\ofxControlPanel\src /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D POCO_STATIC /D CAIRO_WIN32_STATIC_BUILD /D DISABLE_SOME_FLOATING_POINT /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Release\\" /Fd"obj\Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\graph.cpp src\main.cpp src\testApp.cpp ..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp ..\..\..\addons\ofxXmlSettings\libs\tinyxml.cpp ..\..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp ..\..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp ..\..\..\addons\ofxControlPanel\src\guiBaseObject.cpp ..\..\..\addons\ofxControlPanel\src\guiCallback.cpp ..\..\..\addons\ofxControlPanel\src\guiCallbackValue.cpp ..\..\..\addons\ofxControlPanel\src\guiColor.cpp ..\..\..\addons\ofxControlPanel\src\guiTextBase.cpp ..\..\..\addons\ofxControlPanel\src\guiType2DSlider.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeButtonSlider.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeChartPlotter.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeCustom.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeDrawable.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeFileLister.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeLabel.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeLogger.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeMultiToggle.cpp ..\..\..\addons\ofxControlPanel\src\guiTypePanel.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeSlider.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeText.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeTextDropDown.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeTextInput.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeToggle.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeVairableLister.cpp ..\..\..\addons\ofxControlPanel\src\guiTypeVideo.cpp ..\..\..\addons\ofxControlPanel\src\guiValue.cpp ..\..\..\addons\ofxControlPanel\src\ofxControlPanel.cpp ..\..\..\addons\ofxControlPanel\src\simpleColor.cpp ..\..\..\addons\ofxControlPanel\src\simpleFileLister.cpp ..\..\..\addons\ofxControlPanel\src\simpleLogger.cpp
-         graph.cpp
-         main.cpp
+﻿Build started 3/23/2013 3:01:42 PM.
+     1>Project "C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\openRowland.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\libs\openFrameworks /I..\..\..\libs\openFrameworks\graphics /I..\..\..\libs\openFrameworks\app /I..\..\..\libs\openFrameworks\sound /I..\..\..\libs\openFrameworks\utils /I..\..\..\libs\openFrameworks\communication /I..\..\..\libs\openFrameworks\video /I..\..\..\libs\openFrameworks\types /I..\..\..\libs\openFrameworks\math /I..\..\..\libs\openFrameworks\3d /I..\..\..\libs\openFrameworks\gl /I..\..\..\libs\openFrameworks\events /I..\..\..\libs\glut\include /I..\..\..\libs\rtAudio\include /I..\..\..\libs\quicktime\include /I..\..\..\libs\freetype\include /I..\..\..\libs\freetype\include\freetype2 /I..\..\..\libs\freeImage\include /I..\..\..\libs\fmodex\include /I..\..\..\libs\videoInput\include /I..\..\..\libs\glew\include\ /I..\..\..\libs\glu\include /I..\..\..\libs\tess2\include /I..\..\..\libs\cairo\include\cairo /I..\..\..\libs\poco\include /I..\..\..\addons /I..\..\..\addons\ofxXmlSettings\libs /I..\..\..\addons\ofxXmlSettings\src /I..\..\..\addons\ofxControlPanel\libs /I..\..\..\addons\ofxControlPanel\src /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D POCO_STATIC /D CAIRO_WIN32_STATIC_BUILD /D DISABLE_SOME_FLOATING_POINT /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Release\\" /Fd"obj\Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\testApp.cpp
          testApp.cpp
-         ofxXmlSettings.cpp
-         tinyxml.cpp
-         tinyxmlerror.cpp
-         tinyxmlparser.cpp
-         guiBaseObject.cpp
-         guiCallback.cpp
-         guiCallbackValue.cpp
-         guiColor.cpp
-         guiTextBase.cpp
-         guiType2DSlider.cpp
-         guiTypeButtonSlider.cpp
-         guiTypeChartPlotter.cpp
-         guiTypeCustom.cpp
-         guiTypeDrawable.cpp
-         guiTypeFileLister.cpp
-         guiTypeLabel.cpp
-         guiTypeLogger.cpp
-         Generating Code...
-         Compiling...
-         guiTypeMultiToggle.cpp
-         guiTypePanel.cpp
-         guiTypeSlider.cpp
-         guiTypeText.cpp
-         guiTypeTextDropDown.cpp
-         guiTypeTextInput.cpp
-         guiTypeToggle.cpp
-         guiTypeVairableLister.cpp
-         guiTypeVideo.cpp
-         guiValue.cpp
-         ofxControlPanel.cpp
-         simpleColor.cpp
-         simpleFileLister.cpp
-         simpleLogger.cpp
-         Generating Code...
-     1>c:\users\mothzilla\documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\addons\ofxcontrolpanel\src\simplelogger.cpp(113): warning C4700: uninitialized local variable 'yPos' used
-     1>c:\users\mothzilla\documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\addons\ofxcontrolpanel\src\simplelogger.cpp(125): warning C4700: uninitialized local variable 'yPos' used
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\openRowland.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\..\..\libs\glut\lib\vs2010 /LIBPATH:..\..\..\libs\rtAudio\lib\vs2010 /LIBPATH:..\..\..\libs\FreeImage\lib\vs2010 /LIBPATH:..\..\..\libs\freetype\lib\vs2010 /LIBPATH:..\..\..\libs\quicktime\lib\vs2010 /LIBPATH:..\..\..\libs\fmodex\lib\vs2010 /LIBPATH:..\..\..\libs\videoInput\lib\vs2010 /LIBPATH:..\..\..\libs\cairo\lib\vs2010 /LIBPATH:..\..\..\libs\glew\lib\vs2010 /LIBPATH:..\..\..\libs\glu\lib\vs2010 /LIBPATH:..\..\..\libs\Poco\lib\vs2010 /LIBPATH:..\..\..\libs\tess2\lib\vs2010 "cairo-static.lib" "pixman-1.lib" msimg32.lib OpenGL32.lib GLu32.lib kernel32.lib setupapi.lib Vfw32.lib comctl32.lib glut32.lib rtAudioD.lib videoInput.lib libfreetype.lib FreeImage.lib qtmlClient.lib dsound.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib glew32s.lib fmodex_vc.lib glu32.lib PocoFoundationmd.lib PocoNetmd.lib PocoUtilmd.lib PocoXMLmd.lib Ws2_32.lib tess2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:PocoFoundationd.lib /NODEFAULTLIB:atlthunk.lib /NODEFAULTLIB:LIBC.lib /NODEFAULTLIB:LIBCMT /MANIFEST /ManifestFile:"obj\Release\openRowland.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\bin\openRowland.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"bin\openRowland.lib" /MACHINE:X86 obj\Release\graph.obj
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\openRowland.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\..\..\libs\glut\lib\vs2010 /LIBPATH:..\..\..\libs\rtAudio\lib\vs2010 /LIBPATH:..\..\..\libs\FreeImage\lib\vs2010 /LIBPATH:..\..\..\libs\freetype\lib\vs2010 /LIBPATH:..\..\..\libs\quicktime\lib\vs2010 /LIBPATH:..\..\..\libs\fmodex\lib\vs2010 /LIBPATH:..\..\..\libs\videoInput\lib\vs2010 /LIBPATH:..\..\..\libs\cairo\lib\vs2010 /LIBPATH:..\..\..\libs\glew\lib\vs2010 /LIBPATH:..\..\..\libs\glu\lib\vs2010 /LIBPATH:..\..\..\libs\Poco\lib\vs2010 /LIBPATH:..\..\..\libs\tess2\lib\vs2010 "cairo-static.lib" "pixman-1.lib" msimg32.lib OpenGL32.lib GLu32.lib kernel32.lib setupapi.lib Vfw32.lib comctl32.lib glut32.lib rtAudioD.lib videoInput.lib libfreetype.lib FreeImage.lib qtmlClient.lib dsound.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib glew32s.lib fmodex_vc.lib glu32.lib PocoFoundationmd.lib PocoNetmd.lib PocoUtilmd.lib PocoXMLmd.lib Ws2_32.lib tess2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:PocoFoundationd.lib /NODEFAULTLIB:atlthunk.lib /NODEFAULTLIB:LIBC.lib /NODEFAULTLIB:LIBCMT /MANIFEST /ManifestFile:"obj\Release\openRowland.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\bin\openRowland.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"bin\openRowland.lib" /MACHINE:X86 obj\Release\graph.obj
          obj\Release\main.obj
          obj\Release\testApp.obj
          obj\Release\ofxXmlSettings.obj
@@ -78,28 +38,24 @@
          obj\Release\simpleColor.obj
          obj\Release\simpleFileLister.obj
          obj\Release\simpleLogger.obj
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\libs\openFrameworksCompiled\lib\vs2010\openframeworksLib.lib
+         C:\Users\Brian\Documents\GitHub\libs\openFrameworksCompiled\lib\vs2010\openframeworksLib.lib
             Creating library bin\openRowland.lib and object bin\openRowland.exp
-         openRowland.vcxproj -> C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\bin\openRowland.exe
+         openRowland.vcxproj -> C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\bin\openRowland.exe
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"bin\openRowland.exe;#1" /manifest obj\Release\openRowland.exe.intermediate.manifest
        PostBuildEvent:
-         Description: adding DLLs and creating data folder
-         xcopy /e /i /y "C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\*.dll" "C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\bin"
+         xcopy /e /i /y "C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\*.dll" "C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\bin"
          :VCEnd
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\Assimp32.dll
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\fmodex.dll
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\fmodexL.dll
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\FreeImage.dll
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\FreeType-6.dll
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\glut32.dll
-         C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\..\..\..\export\vs2010\Zlib.dll
+         C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\Assimp32.dll
+         C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\fmodex.dll
+         C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\fmodexL.dll
+         C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\FreeImage.dll
+         C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\FreeType-6.dll
+         C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\glut32.dll
+         C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\..\..\..\export\vs2010\Zlib.dll
          7 File(s) copied
-       FinalizeBuildStatus:
-         Deleting file "obj\Release\openRowland.unsuccessfulbuild".
-         Touching "obj\Release\openRowland.lastbuildstate".
-     1>Done Building Project "C:\Users\mothzilla\Documents\of_v0.7.4_vs2010_release\of_v0.7.4_vs2010_release\apps\myApps\openRowland\openRowland.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\Brian\Documents\GitHub\OpenSourceSpectrometer\DesktopApplication\openRowland\openRowland.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:01:13.63
+Time Elapsed 00:00:05.23
