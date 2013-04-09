@@ -22,16 +22,17 @@ void onIdle(void) {
 void drawScene(void)
 {
 	// *** BEGIN Drawing ***
-	glClear (GL_COLOR_BUFFER_BIT);
-	glLoadIdentity();
+
+	glClear (GL_COLOR_BUFFER_BIT);	// clear screen
+	glLoadIdentity();	// not sure if this is needed?
 	
 	// draw a test quadrilateral...	
-	glBegin(GL_QUADS);
-	unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
-	glVertex2f(x1, y1); glVertex2f(2*x2, y1); glVertex2f(x2, y2); glVertex2f(x1, y2);
-	glEnd();
+	/*glBegin(GL_QUADS); // special opengl drawing mode
+		unsigned int x1 = 60, y1 = 22, x2 = 200, y2 = 37;
+		glVertex2f(x1, y1); glVertex2f(2*x2, y1); glVertex2f(x2, y2); glVertex2f(x1, y2); // send gl_quads four vertices
+	glEnd();*/
 	
-	
+	// Draw the spectrometer graph
 	spec.drawGraph();
 	
 	// *** END Drawing ***
@@ -81,8 +82,9 @@ void setup(void)
 
 	spec = graph(50,75, WINDOW_INIT_WIDTH-100, WINDOW_INIT_HEIGHT-140, 250, 800, "UbuntuMono-R.ttf");
 	vector<point> pts = vector<point>();
+
 	for (int i = 0; i < 2048; i++) {
-		pts.push_back(point(i,i));
+		pts.push_back(point(i, rand()%600));
 	}
 	spec.updatePoints(pts);
 }
