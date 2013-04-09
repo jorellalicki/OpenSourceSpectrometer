@@ -44,7 +44,7 @@ void graph::drawGraph ()
 	for (int i = 0; i <2048; i++){
 		HSVtoRGB(&r,&g,&b,(float)i*330/2048.0,(float)1.0,(float)1.0);
 		glColor3f(r,g,b);
-		glVertex2f((points[i].x+rand()%10)*1000/2248.0, points[i].y);
+		glVertex2f(points[i].x*1000/2248.0, points[i].y+rand()%40);
 	}
 	
 	

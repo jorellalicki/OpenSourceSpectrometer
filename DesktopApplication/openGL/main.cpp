@@ -1,5 +1,6 @@
 #include <GL/glut.h>
 #include <iostream>
+#include <cmath>
 #include "graph.h"
 
 using namespace std;
@@ -84,8 +85,12 @@ void setup(void)
 	vector<point> pts = vector<point>();
 
 	for (int i = 0; i < 2048; i++) {
-		pts.push_back(point(i, rand()%600));
+		//pts.push_back(point(i, rand()%600));
+		pts.push_back(point(i, 200+(200*sin(i/50.0)) + rand()%200));
 	}
+	
+	
+	
 	spec.updatePoints(pts);
 }
 
