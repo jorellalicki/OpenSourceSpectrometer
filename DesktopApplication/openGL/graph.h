@@ -51,7 +51,7 @@ class graph{
 		graph();
 		graph(int _x,int _y, int _width, int _height, int _xMin, int _xMax, string sFont);
 		
-		
+		void HSVtoRGB( float *r, float *g, float *b, float h, float s, float v );
 		void updatePoints(vector<point> p) {
 			points = p;
 		}

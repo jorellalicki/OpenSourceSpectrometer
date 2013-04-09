@@ -1,5 +1,6 @@
 #include "graph.h"
-
+#include <iostream>
+#include <cmath>
 
 graph::graph () {}
 
@@ -28,10 +29,25 @@ void graph::drawGraph ()
 	glBegin(GL_LINE_STRIP);
 	//ofRotateX(mouseY);
 	//ofRotateY(mouseX);
+	
+	// TODO: fix drawing in a certain view
+	/*
 	for(int i=viewStartOffset; i<viewStartOffset+viewLength; i++) {
 		glColor3f(colors[i].r, colors[i].g, colors[i].b);
 		glVertex2f(points[i].x, points[i].y);
+	}*/
+	
+	float r;
+	float g;
+	float b;
+
+	for (int i = 0; i <2048; i++){
+		HSVtoRGB(&r,&g,&b,(float)i*330/2048.0,(float)1.0,(float)1.0);
+		glColor3f(r,g,b);
+		glVertex2f(points[i].x*1000/2248.0, points[i].y+rand()%40);
 	}
+	
+	
 	glEnd();
 	glLineWidth(1.5);
 	glBegin(GL_LINES);
@@ -86,3 +102,53 @@ void graph::setViewContext()
 	xMin += newViewStart * range;
 	inc = width/((float)viewLength);
 }
+
+void graph::HSVtoRGB( float *r, float *g, float *b, float h, float s, float v )
+{
+	int i;
+	float f, p, q, t;
+	if( s == 0 ) {
+		// achromatic (grey)
+		*r = *g = *b = v;
+		return;
+	}
+	h /= 60;			// sector 0 to 5
+	i = floor( h );
+	f = h - i;			// factorial part of h
+	p = v * ( 1 - s );
+	q = v * ( 1 - s * f );
+	t = v * ( 1 - s * ( 1 - f ) );
+	switch( i ) {
+		case 0:
+			*r = v;
+			*g = t;
+			*b = p;
+			break;
+		case 1:
+			*r = q;
+			*g = v;
+			*b = p;
+			break;
+		case 2:
+			*r = p;
+			*g = v;
+			*b = t;
+			break;
+		case 3:
+			*r = p;
+			*g = q;
+			*b = v;
+			break;
+		case 4:
+			*r = t;
+			*g = p;
+			*b = v;
+			break;
+		default:		// case 5:
+			*r = v;
+			*g = p;
+			*b = q;
+			break;
+	}
+}
+
