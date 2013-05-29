@@ -25,7 +25,7 @@ void loop(){
                 digitalWrite(clock, LOW);
 		delayMicroseconds(1);
 		digitalWrite(clock, HIGH);
-	        delayMicroseconds(100);
+	        delayMicroseconds(1);
          }
 /*
 	for(int i = 0; i < 2048; ++i){
