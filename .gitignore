@@ -166,3 +166,6 @@ pip-log.txt
 #misc
 /bin
 /obj
+
+#temp eli (diptrace component) files
+*.eli~
